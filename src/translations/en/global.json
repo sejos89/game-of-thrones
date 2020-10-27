@@ -1,0 +1,6 @@
+{
+    "footer": {"characters": "CHARACTERS", "houses": "HOUSES", "chronology": "CHRONOLOGY"},
+    "header": {"search": "Search..."},
+    "characters": {"house": "HOUSE", "allegiances": "ALLEGIANCES", "appearances": "APPEARANCES", "father": "FATHER", "siblings": "SIBLINGS", "titles": "TITLES"},
+    "houses": {"words": "WORDS", "seat": "SEAT", "region": "REGION", "allegiances": "ALLEGIANCES", "religion": "RELIGION", "created": "CREATED"}
+}

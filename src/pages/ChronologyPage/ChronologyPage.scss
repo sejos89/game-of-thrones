@@ -1,0 +1,42 @@
+#character-figure {
+  height: 80px;
+  width: 80px;
+}
+
+#character-image {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: -20% 0;
+}
+
+#space-div {
+  height: 110px;
+  width: 100%;
+}
+
+#cont-1 {
+  padding-bottom: 80px;
+  border-right: 2px solid white;
+  border-top: 2px solid white;
+  padding-right: 60px;
+}
+
+#cont-2 {
+  padding-bottom: 80px;
+  border-top: 2px solid white;
+  padding-left: 34px;
+}
+
+#button-container {
+  height: 50px;
+}
+
+#button-age {
+  background-color: transparent;
+  border: 2px solid white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: white;
+  outline: none;
+}

@@ -2,10 +2,39 @@
   border-radius: 5px;
 }
 
-ul {
-  margin: 0;
+#list-header {
+  list-style-type: none;
+  display: inline;
 }
 
-li {
-  display: inline;
+#search-bar {
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  font-family: "Helvetica Neue";
+  border-style: none;
+  border-bottom: 2px solid white;
+  width: 900px;
+  outline: none;
+}
+
+.flag-button {
+  color: white;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin-top: 8px;
+}
+
+#back-button {
+  color: white;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.icon-header {
+  font-size: 23px;
 }

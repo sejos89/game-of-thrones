@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  height: 70px;
+  height: 100px;
   width: 100%;
   overflow: hidden;
 }
@@ -24,19 +24,58 @@
 .App-footer {
   position: fixed;
   bottom: 0;
-  height: 150px;
+  height: 135px;
   display: flex;
   align-items: center;
+}
+
+h4,
+h6,
+p,
+ul {
+  text-align: center;
+}
+
+.detail-list {
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+}
+
+.list-with-scroll {
+  height: 200px;
+  overflow-y: auto;
+  padding: 0;
 }
 
 // La reusamos en todas las paginas para añadir espacio arriba y abajo para
 // que se vean header y footer
 .make-space {
-  margin-top: 70px;
-  margin-bottom: 150px;
-  height: calc(100vh - 150px - 70px);
+  margin-top: 100px;
+  margin-bottom: 135px;
+  height: calc(100vh - 135px - 100px);
   overflow: auto;
   overflow-x: hidden;
+}
+
+/* width */
+.scrollBar::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+.scrollBar::-webkit-scrollbar-track {
+  background: rgb(49, 49, 49);
+}
+
+/* Handle */
+.scrollBar::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 5px;
+}
+
+// para que en detalles de personajes o casas no salga la barra de scroll
+#detail-container {
+  overflow: hidden;
 }
 
 // https://css-tricks.com/almanac/properties/s/scrollbar/

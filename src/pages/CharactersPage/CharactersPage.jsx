@@ -8,24 +8,21 @@ export default function CharactersPage() {
   const [characters, setCharacters] = useState([]);
   const [filter, setFilter] = useState("");
 
-  console.log(process.env.REACT_APP_BACK_URL + "characters");
-
   useEffect(() => {
-    axios.get("https://api.got.show/api/show/characters").then((res) => {
+    axios.get(process.env.REACT_APP_BACK_URL + "characters").then((res) => {
       // setFilteredAmiibos(res.data.amiibo);
       setCharacters(res.data);
     });
   }, []);
 
   const handleOnSearch = (match) => {
-    console.log(match.currentTarget.value);
     setFilter(match.currentTarget.value);
   };
 
   return (
     <>
       <Header onSearch={handleOnSearch} />
-      <div class="container make-space">
+      <div class="container make-space scrollBar">
         <Gallery
           // items={characters.filter((character) =>
           //   character.name.toLowerCase().includes(filter.toLowerCase())

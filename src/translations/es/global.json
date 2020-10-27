@@ -1,0 +1,6 @@
+{
+    "footer": {"characters": "PERSONAJES", "houses": "CASAS", "chronology": "CRONOLOGIA"},
+    "header": {"search": "Buscar..."},
+    "characters": {"house": "CASA", "allegiances": "ALIANZAS", "appearances": "APARICIONES", "father": "PADRE", "siblings": "HERMANOS", "titles": "TITULOS"},
+    "houses": {"words": "LEMA", "seat": "SEDE", "region": "REGION", "allegiances": "APARICIONES", "religion": "RELIGION", "created": "FUNDACION"}
+}
