@@ -10,27 +10,39 @@ export default function ChronologyPage() {
 
     const [characters, setCharacters] = useState([]);
 
-    const [age, setAge] = useState([]);
+    const [minAge, setMinAge] = useState("");
+    const [maxAge, setMaxAge] = useState("");
+
+    const [orderAsc, setOrderAsc] = useState(true);
+
 
     useEffect(() => {
         axios.get(process.env.REACT_APP_BACK_URL + "characters").then((res) => {
-        //   setCharacters(res.data.filter(item => item.age !== null).filter(item => item.age.age !== undefined));
-        //   setCharacters(res.data.filter(item => !!item.age).filter(item => !!item.age.age));
-          setCharacters(res.data.filter(item => !!item.age && !!item.age.age));
-          setAge(res.data.filter(item => !!item.age && !!item.age.age).reduce((prev, curr) => prev.age.age < curr.age.age ? prev : curr).age.age);
+        //   con el item.age?.age elimina todos los item.age en caso de que sean false, y si no entra en item.age.age y mira si son false
+          const charactersAge = res.data.filter(item => !!item.age?.age);
+          setCharacters(charactersAge);
+          console.log(res.data[0])
+          setMinAge(charactersAge.reduce((prev, curr) => prev.age.age < curr.age.age ? prev : curr).age.age);
+          setMaxAge(charactersAge.reduce((prev, curr) => prev.age.age > curr.age.age ? prev : curr).age.age);
         });
       }, []);
+
 
     return (
         <>
             <Header charac={characters}/>
             <div class="container make-space scrollBar">
                 <div id="button-container" className="d-flex justify-content-center align-items-end">
-                    {age && <button id="button-age">{age}</button>}
+                    {/* con el setOrderAsc(!orderAsc) cambiamos el estado de "orderAsc al contrario del actual" */}
+                    <button onClick={() => setOrderAsc(!orderAsc)} id="button-age">{ orderAsc ? minAge : maxAge }</button>
                 </div>
                 <div className="d-flex justify-content-center">
                     <div className="d-flex flex-column align-items-center">
-                        {characters.filter((item, index) => index % 2 === 0).sort((a, b) => (a.age.age > b.age.age) ? 1 : -1).map((character, i) => (
+                        <div id="vl" className="d-flex flex-column align-items-end justify-content-between">
+                        {orderAsc ? <span class="arrow up"></span> : <span class="arrow down"></span>}
+                        {/* {!orderAsc ? <span class="arrow down"></span> : <span></span>} */}
+                        </div>
+                        {characters.filter((item, index) => index % 2 === 0).sort((a, b) => orderAsc ? (a.age.age - b.age.age) :  (b.age.age - a.age.age)).map((character, i) => (
                             <div id="cont-1" className="d-flex flex-column align-items-center w-100">
                                 <p className="mb-1">{character.age.age}</p>
                                 <p className="mb-1">{character.name}</p>
@@ -42,7 +54,7 @@ export default function ChronologyPage() {
                     </div>
                     <div className="d-flex flex-column align-items-center">
                         <div id="space-div"></div>
-                        {characters.filter((item, index) => index % 2 !== 0).sort((a, b) => (a.age.age > b.age.age) ? 1 : -1).map((character, i) => (
+                        {characters.filter((item, index) => index % 2 !== 0).sort((a, b) => orderAsc ? (a.age.age - b.age.age) :  (b.age.age - a.age.age)).map((character, i) => (
                             <div id="cont-2" className="d-flex flex-column align-items-center w-100">
                                 <p className="mb-1">{character.age.age}</p>
                                 <p className="mb-1">{character.name}</p>
