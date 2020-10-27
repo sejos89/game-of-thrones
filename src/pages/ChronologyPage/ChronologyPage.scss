@@ -14,6 +14,11 @@
   width: 100%;
 }
 
+// Asignamos un ancho fijo para que no se desplacen cuando se filtra en la barra de busqueda
+.column-contain {
+  width: 245px;
+}
+
 #vl {
   height: 40px;
   width: 100%;
