@@ -10,7 +10,7 @@ export default function CharactersPage() {
 
   useEffect(() => {
     axios.get(process.env.REACT_APP_BACK_URL + "characters").then((res) => {
-      // setFilteredAmiibos(res.data.amiibo);
+      console.log(res.data);
       setCharacters(res.data);
     });
   }, []);
@@ -24,9 +24,6 @@ export default function CharactersPage() {
       <Header onSearch={handleOnSearch} />
       <div class="container make-space scrollBar">
         <Gallery
-          // items={characters.filter((character) =>
-          //   character.name.toLowerCase().includes(filter.toLowerCase())
-          // )}
           items={characters.filter(({ name }) =>
             name.toLowerCase().includes(filter.toLowerCase())
           )}

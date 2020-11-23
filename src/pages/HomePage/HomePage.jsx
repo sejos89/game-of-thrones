@@ -7,8 +7,8 @@ import "./HomePage.scss";
 export default function HomePage() {
   return (
     <>
-      <Header/>
-      <div class="homepage" />
+      <Header />
+      <div class="homepage">GAME OF THRONES</div>
       <Footer />
     </>
   );

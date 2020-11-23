@@ -7,7 +7,6 @@ import { useTranslation } from "react-i18next";
 import Header from "../../../../shared/components/Header/Header";
 
 export default function HouseDetail() {
-
   const [t, i18n] = useTranslation("global");
 
   let { name } = useParams();
@@ -25,52 +24,57 @@ export default function HouseDetail() {
 
   return (
     <>
-      <Header goBack={ goBackHandle }/>
-      <div className="container make-space" id="detail-container">
+      <Header goBack={goBackHandle} />
+      <div
+        className="container make-space make-space--no-footer"
+        id="detail-container"
+      >
         <div className="character-header row justify-content-center">
-          <figure className="header-img">
+          <figure className="header-img-house">
             <img src={item.logoURL} alt={item.name} />
           </figure>
         </div>
-        <h4 className="mb-5">{item.name}</h4>
+        <p className="header-name mb-5">{item.name}</p>
 
         <div className="row">
-          <div className="col">
+          <div className="col detail-field">
             <h6>{t("houses.words")}</h6>
             <p className="detail-list">{item.words}</p>
           </div>
-          <div className="col">
+          <div className="col detail-field">
             <h6>{t("houses.seat")}</h6>
             <ul className="list-with-scroll">
               {/* es lo mismo "item.seat && item.seat.map" que poner "item.seat?.map" */}
-              {item.seat?.map((seat) => <li className="detail-list">{seat}</li>)}
+              {item.seat?.map((seat) => (
+                <li className="detail-list">{seat}</li>
+              ))}
             </ul>
           </div>
-          <div className="col">
+          <div className="col detail-field">
             <h6>{t("houses.region")}</h6>
             <ul className="list-with-scroll">
               {item.region?.map((region) => (
-                  <li className="detail-list">{region}</li>
-                ))}
+                <li className="detail-list">{region}</li>
+              ))}
             </ul>
           </div>
-          <div className="col">
+          <div className="col detail-field">
             <h6>{t("houses.allegiances")}</h6>
             <ul className="list-with-scroll">
               {item.allegiance?.map((allegiance) => (
-                  <li className="detail-list">{allegiance}</li>
-                ))}
+                <li className="detail-list">{allegiance}</li>
+              ))}
             </ul>
           </div>
-          <div className="col">
+          <div className="col detail-field">
             <h6>{t("houses.religion")}</h6>
             <ul className="list-with-scroll">
               {item.religion?.map((religion) => (
-                  <li className="detail-list">{religion}</li>
-                ))}
+                <li className="detail-list">{religion}</li>
+              ))}
             </ul>
           </div>
-          <div className="col">
+          <div className="col detail-field">
             <h6>{t("houses.created")}</h6>
             {<p className="detail-list">{item.createdAt?.slice(0, 10)}</p>}
           </div>

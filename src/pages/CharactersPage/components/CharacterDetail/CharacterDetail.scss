@@ -2,3 +2,42 @@
   max-width: 150px;
   max-height: 200px;
 }
+
+.header-name {
+  font-size: 25px;
+}
+
+.house-img {
+  max-width: 125px;
+  max-height: 150px;
+}
+
+.detail-field {
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 992px) {
+  .homepage {
+    font-size: 100px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .homepage {
+    font-size: 80px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .header-img {
+    width: 100px;
+    height: 150px;
+  }
+  .header-name {
+    font-size: 18px;
+  }
+  .house-img {
+    max-width: 70px;
+    max-height: 85px;
+    margin: auto;
+  }
+}
